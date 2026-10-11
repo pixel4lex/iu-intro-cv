@@ -1,0 +1,293 @@
+{
+  "dataset": "personal",
+  "versions": {
+    "opencv": "4.14.0",
+    "numpy": "2.4.6",
+    "pillow": "12.3.0"
+  },
+  "records": [
+    {
+      "command": "gamma",
+      "gamma": 0.5,
+      "before": {
+        "mean": 19.0,
+        "p1": 0,
+        "median": 6,
+        "p99": 177,
+        "clipped_black_pct": 10.49,
+        "clipped_white_pct": 0.0
+      },
+      "after": {
+        "mean": 53.2,
+        "p1": 0,
+        "median": 38,
+        "p99": 213,
+        "clipped_black_pct": 10.31,
+        "clipped_white_pct": 0.0
+      },
+      "out": "out/personal/dark_g05.jpg"
+    },
+    {
+      "command": "gamma",
+      "gamma": 2.0,
+      "before": {
+        "mean": 19.0,
+        "p1": 0,
+        "median": 6,
+        "p99": 177,
+        "clipped_black_pct": 10.49,
+        "clipped_white_pct": 0.0
+      },
+      "after": {
+        "mean": 4.8,
+        "p1": 0,
+        "median": 0,
+        "p99": 123,
+        "clipped_black_pct": 58.83,
+        "clipped_white_pct": 0.0
+      },
+      "out": "out/personal/dark_g20.jpg"
+    },
+    {
+      "command": "wb",
+      "method": "grey-world",
+      "gains_bgr": [
+        1.121,
+        1.013,
+        0.892
+      ],
+      "means_before_bgr": [
+        133.7,
+        147.9,
+        168.5
+      ],
+      "means_after_bgr": [
+        149.8,
+        150.0,
+        150.3
+      ],
+      "out": "out/personal/bright_gw.jpg"
+    },
+    {
+      "command": "wb",
+      "method": "white-patch",
+      "gains_bgr": [
+        1.281,
+        1.181,
+        1.016
+      ],
+      "means_before_bgr": [
+        133.7,
+        147.9,
+        168.5
+      ],
+      "means_after_bgr": [
+        171.2,
+        174.5,
+        171.2
+      ],
+      "out": "out/personal/bright_wp.jpg"
+    },
+    {
+      "command": "clahe",
+      "clip": 2.0,
+      "tiles": 8,
+      "local_contrast": {
+        "исходный": {
+          "shadow_std": 0.5,
+          "shadow_mean": 0.7,
+          "light_mean": 67.3,
+          "light_std": 40.3
+        },
+        "equalizeHist": {
+          "shadow_std": 33.7,
+          "shadow_mean": 52.4,
+          "light_mean": 226.0,
+          "light_std": 16.7
+        },
+        "CLAHE": {
+          "shadow_std": 1.9,
+          "shadow_mean": 4.7,
+          "light_mean": 101.1,
+          "light_std": 35.7
+        }
+      },
+      "out": "out/personal/dark_clahe.jpg"
+    },
+    {
+      "command": "chromakey",
+      "lo": [
+        176,
+        49,
+        40
+      ],
+      "hi": [
+        35,
+        255,
+        255
+      ],
+      "bbox": [
+        1065,
+        259,
+        359,
+        509
+      ],
+      "area": 134506,
+      "components": 1,
+      "centroid": [
+        1262.7824689843076,
+        515.0069986792982
+      ],
+      "raw_components": 1697,
+      "morph_components": 111,
+      "holes_before_fill": 27,
+      "holes": 0,
+      "mask_pct": 4.48,
+      "out": "out/personal/object_on_bg.jpg"
+    },
+    {
+      "command": "rotate",
+      "deg": 30.0,
+      "size_in": [
+        1500,
+        2000
+      ],
+      "size_out": [
+        2300,
+        2483
+      ],
+      "canvas_empty_pct": 47.5,
+      "out": "out/personal/poster_rot30.jpg"
+    },
+    {
+      "command": "rotate",
+      "deg": -137.0,
+      "size_in": [
+        1500,
+        2000
+      ],
+      "size_out": [
+        2462,
+        2486
+      ],
+      "canvas_empty_pct": 51.0,
+      "out": "out/personal/poster_rot-137.jpg"
+    },
+    {
+      "command": "resize",
+      "scale": 0.25,
+      "method": "naive",
+      "size_out": [
+        375,
+        500
+      ],
+      "out": "out/personal/text_x025_naive.jpg"
+    },
+    {
+      "command": "resize",
+      "scale": 0.25,
+      "method": "blur",
+      "size_out": [
+        375,
+        500
+      ],
+      "out": "out/personal/text_x025_blur.jpg"
+    },
+    {
+      "command": "resize",
+      "scale": 0.25,
+      "method": "area",
+      "size_out": [
+        375,
+        500
+      ],
+      "out": "out/personal/text_x025_area.jpg",
+      "psnr_vs_lanczos_db": {
+        "naive": 22.3,
+        "blur": 28.8,
+        "area": 30.5
+      }
+    },
+    {
+      "command": "resize",
+      "scale": 2.0,
+      "method": "area",
+      "size_out": [
+        3000,
+        4000
+      ],
+      "out": "out/personal/text_x2.jpg"
+    },
+    {
+      "command": "rectify",
+      "corners_ordered": [
+        [
+          186.0,
+          198.0
+        ],
+        [
+          1304.0,
+          28.0
+        ],
+        [
+          1222.0,
+          1941.0
+        ],
+        [
+          121.0,
+          1693.0
+        ]
+      ],
+      "sides_px": {
+        "top": 1130.9,
+        "right": 1914.8,
+        "bottom": 1128.6,
+        "left": 1496.4
+      },
+      "size_out": [
+        1131,
+        1600
+      ],
+      "aspect_out": 0.707,
+      "out": "out/personal/poster_front.jpg"
+    },
+    {
+      "command": "sheet",
+      "n": 20,
+      "cols": 4,
+      "size_out": [
+        1320,
+        1378
+      ],
+      "out": "out/personal/sheet.jpg"
+    }
+  ],
+  "comparison": {},
+  "diagnostics": {
+    "white_paper_roi": {
+      "xywh": [
+        800,
+        1050,
+        180,
+        180
+      ],
+      "means_bgr": {
+        "original": [
+          181.4,
+          189.7,
+          197.7
+        ],
+        "grey-world": [
+          203.3,
+          192.5,
+          176.4
+        ],
+        "white-patch": [
+          232.5,
+          224.0,
+          200.7
+        ]
+      }
+    }
+  }
+}

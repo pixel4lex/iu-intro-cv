@@ -1,0 +1,14 @@
+python photolab.py gamma data/dark.jpg --gamma 0.5 -o out/personal/dark_g05.jpg --hist out/personal/dark_g05_hist.png
+python photolab.py gamma data/dark.jpg --gamma 2.0 -o out/personal/dark_g20.jpg --hist out/personal/dark_g20_hist.png
+python photolab.py wb data/bright.jpg --method grey-world -o out/personal/bright_gw.jpg --hist out/personal/bright_gw_hist.png
+python photolab.py wb data/bright.jpg --method white-patch -o out/personal/bright_wp.jpg --hist out/personal/bright_wp_hist.png
+python photolab.py clahe data/dark.jpg --clip 2 --tiles 8 -o out/personal/dark_clahe.jpg --compare out/personal/dark_cmp.jpg --hist out/personal/dark_clahe_hist.png
+python photolab.py chromakey data/object.jpg --bg data/bg.jpg --sample 1160,400,150,18 -o out/personal/object_on_bg.jpg --mask out/personal/object_mask.png
+python photolab.py rotate data/poster.jpg --deg 30 -o out/personal/poster_rot30.jpg
+python photolab.py rotate data/poster.jpg --deg -137 -o out/personal/poster_rot-137.jpg
+python photolab.py resize data/text.jpg --scale 0.25 --method naive -o out/personal/text_x025_naive.jpg
+python photolab.py resize data/text.jpg --scale 0.25 --method blur -o out/personal/text_x025_blur.jpg
+python photolab.py resize data/text.jpg --scale 0.25 --method area --report -o out/personal/text_x025_area.jpg
+python photolab.py resize data/text.jpg --scale 2 -o out/personal/text_x2.jpg
+python photolab.py rectify data/poster.jpg --corners 1222,1941,186,198,121,1693,1304,28 --aspect 0.7070707070707071 -o out/personal/poster_front.jpg
+python photolab.py sheet data/dark.jpg data/bright.jpg data/object.jpg data/bg.jpg data/poster.jpg data/text.jpg out/personal/bright_gw.jpg out/personal/bright_wp.jpg out/personal/dark_clahe.jpg out/personal/dark_cmp.jpg out/personal/dark_g05.jpg out/personal/dark_g20.jpg out/personal/object_on_bg.jpg out/personal/poster_front.jpg out/personal/poster_rot-137.jpg out/personal/poster_rot30.jpg out/personal/text_x025_area.jpg out/personal/text_x025_blur.jpg out/personal/text_x025_naive.jpg out/personal/text_x2.jpg --cols 4 -o out/personal/sheet.jpg

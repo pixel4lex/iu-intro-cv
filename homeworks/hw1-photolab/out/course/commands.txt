@@ -1,0 +1,17 @@
+python photolab.py gamma sample_data/iu-building.jpg --gamma 0.5 -o out/course/dark_g05.jpg --hist out/course/dark_g05_hist.png
+python photolab.py gamma sample_data/iu-building.jpg --gamma 2.0 -o out/course/dark_g20.jpg --hist out/course/dark_g20_hist.png
+python photolab.py wb sample_data/ball-lamp.jpg --method grey-world -o out/course/bright_gw.jpg --hist out/course/bright_gw_hist.png
+python photolab.py wb sample_data/ball-lamp.jpg --method white-patch -o out/course/bright_wp.jpg --hist out/course/bright_wp_hist.png
+python photolab.py clahe sample_data/iu-building.jpg --clip 2 --tiles 8 -o out/course/dark_clahe.jpg --compare out/course/dark_cmp.jpg --hist out/course/dark_clahe_hist.png
+python photolab.py chromakey sample_data/ball-lamp.jpg --bg sample_data/road-cam.jpg --lo 140,121,40 --hi 168,230,255 -o out/course/object_on_bg.jpg --mask out/course/object_mask.png
+python photolab.py chromakey sample_data/ball-day.jpg --bg sample_data/road-cam.jpg --sample 160,530,60,60 -o out/course/ball_day_on_bg.jpg --mask out/course/ball_day_mask.png
+python photolab.py rotate sample_data/poster-angle.jpg --deg 30 -o out/course/poster_rot30.jpg
+python photolab.py rotate sample_data/poster-angle.jpg --deg -137 -o out/course/poster_rot-137.jpg
+python photolab.py rotate sample_data/iu-building.jpg --deg 30 -o out/course/iu_rot30.jpg
+python photolab.py resize sample_data/iu-building.jpg --scale 0.25 --method naive -o out/course/text_x025_naive.jpg
+python photolab.py resize sample_data/iu-building.jpg --scale 0.25 --method blur -o out/course/text_x025_blur.jpg
+python photolab.py resize sample_data/iu-building.jpg --scale 0.25 --method area --report -o out/course/text_x025_area.jpg
+python photolab.py resize sample_data/iu-building.jpg --scale 2 -o out/course/text_x2.jpg
+python photolab.py rectify sample_data/poster-angle.jpg --corners 1290,1010,560,330,600,840,1250,220 --aspect 0.707 -o out/course/poster_front.jpg
+python photolab.py rectify sample_data/poster-angle.jpg --corners 1290,1010,560,330,600,840,1250,220 --size 640x905 -o out/course/poster_front640.png
+python photolab.py sheet sample_data/iu-building.jpg sample_data/ball-lamp.jpg sample_data/road-cam.jpg sample_data/poster-angle.jpg out/course/ball_day_on_bg.jpg out/course/bright_gw.jpg out/course/bright_wp.jpg out/course/dark_clahe.jpg out/course/dark_cmp.jpg out/course/dark_g05.jpg out/course/dark_g20.jpg out/course/iu_rot30.jpg out/course/object_on_bg.jpg out/course/poster_front.jpg out/course/poster_rot-137.jpg out/course/poster_rot30.jpg out/course/text_x025_area.jpg out/course/text_x025_blur.jpg out/course/text_x025_naive.jpg out/course/text_x2.jpg --cols 4 -o out/course/sheet.jpg
